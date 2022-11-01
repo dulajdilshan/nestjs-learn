@@ -1,4 +1,5 @@
 import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { data } from './data';
 
 @Controller('report/:type')
 export class AppController {
