@@ -1,12 +1,33 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 
-@Controller()
+@Controller('report/:type')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getAllIncomeReports(
+    @Param('type') type: string
+  ) {
+    console.log(type);
+    
+    return [];
+  }
+
+  @Get(':id')
+  getIcomeReportById() {
+    return {};
+  }
+
+  @Post()
+  createIcomeReport() {
+    return { status: 'CREATED' };
+  }
+
+  @Put(':id')
+  updateIcomeReportById() {
+    return { status: 'UPDATED' };
+  }
+
+  @Delete(':id')
+  deleteIncomeReportById() {
+    return { status: 'DELETED' };
   }
 }
